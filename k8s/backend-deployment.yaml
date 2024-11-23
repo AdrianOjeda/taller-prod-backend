@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taller-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taller-backend
+  template:
+    metadata:
+      labels:
+        app: taller-backend
+    spec:
+      containers:
+        - name: taller-backend
+          image: adrianojeda/taller-backend:v11
+          ports:
+            - containerPort: 8080  # Backend container port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: taller-backend-service
+spec:
+  selector:
+    app: taller-backend
+  ports:
+    - protocol: TCP
+      port: 8080       # Service port
+      targetPort: 8080 # Backend container port
+      nodePort: 30080  # Set static external port for backend
+  type: LoadBalancer
