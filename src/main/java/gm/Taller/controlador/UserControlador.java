@@ -16,7 +16,14 @@ import java.util.List;
 @RestController
 //http://localhost:8081/taller-app/
 @RequestMapping("taller-app")
-
+@CrossOrigin(origins = {
+        "https://taller-mecanico-web.vercel.app",
+        "http://localhost:5173"
+},
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.PATCH},
+        allowCredentials = "true"
+)
 public class UserControlador {
     private static final Logger logger =
             LoggerFactory.getLogger((UserControlador.class));
