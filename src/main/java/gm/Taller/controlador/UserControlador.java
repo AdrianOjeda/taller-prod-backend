@@ -16,16 +16,7 @@ import java.util.List;
 @RestController
 //http://localhost:8081/taller-app/
 @RequestMapping("taller-app")
-@CrossOrigin(origins = {
-        "http://localhost:5173",
-        "http://localhost:8081",
-        "http://localhost:3000",
-        "http://192.168.49.2:30000",
-        "http://127.0.0.1:52034",
-        "http://taller-frontend-service.default.svc.cluster.local",
-        "http://127.0.0.1:61191",
-        "*"  // Allow all origins if necessary
-})
+
 public class UserControlador {
     private static final Logger logger =
             LoggerFactory.getLogger((UserControlador.class));

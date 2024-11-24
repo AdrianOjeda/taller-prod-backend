@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 //http://localhost:8081/taller-app/
 @RequestMapping("taller-app")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:8081", "http://localhost:3000"})
+
 public class VehiculoControlador {
 
     private static final Logger logger =

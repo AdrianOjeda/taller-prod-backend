@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @RestController
 //http://localhost:8081/taller-app/
 @RequestMapping("taller-app")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:8081", "http://localhost:3000"})
 
 public class PiezaControlador {
     private static final Logger logger =
@@ -69,7 +68,7 @@ public class PiezaControlador {
         }
     }
 
-    @PutMapping("/piezas/{piezaId}")
+    @PutMapping("/piezas/editar/{piezaId}")
     public ResponseEntity<Piezas> updatePieza(@PathVariable Integer piezaId, @RequestBody Piezas updatedPieza) {
         try {
             Piezas existingPieza = PiezaServicio.searchPiezaById(piezaId); // Assuming a searchPiezaById method exists
@@ -88,7 +87,7 @@ public class PiezaControlador {
         }
     }
 
-    @DeleteMapping("/piezas/{piezaId}")
+    @DeleteMapping("/piezas/delete/{piezaId}")
     public ResponseEntity<Void> deletePieza(@PathVariable Integer piezaId) {
         try {
 

@@ -2,13 +2,13 @@
 FROM eclipse-temurin:22-jdk
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app/taller
 
 # Copy the Spring Boot JAR file to the container
 COPY target/Taller-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port your application will run on
-EXPOSE 8080
+EXPOSE 8081
 
 
 # Database connection details
